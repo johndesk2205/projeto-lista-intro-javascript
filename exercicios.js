@@ -17,12 +17,12 @@ function imprimeMensagem() {
 // EXERCÍCIOS PARA FAZER ------------------------------------------------------------------
 
 // EXERCÍCIO 01
-function calculaAreaRetangulo(altura,largura) {
+function calculaAreaRetangulo(altura, largura) {
   // implemente sua lógica aqui
   altura = prompt("Digite a altura do retangulo:")
   largura = prompt("Digite a largura do retangulo:")
-  
-  const area = altura*largura
+
+  const area = altura * largura
 
   return console.log(area)
 }
@@ -42,7 +42,7 @@ function imprimeIdade(anoAtual, anoNascimento) {
 // EXERCÍCIO 03
 function calculaIMC(peso, altura) {
   // implemente sua lógica aqui
-  const calculo = (peso/(altura*altura))
+  const calculo = (peso / (altura * altura))
 
   return calculo
 
@@ -52,21 +52,21 @@ function calculaIMC(peso, altura) {
 function imprimeInformacoesUsuario() {
   // implemente sua lógica aqui
   // "Meu nome é NOME, tenho IDADE anos, e o meu email é EMAIL."
-const nome = prompt("Digite seu nome:")
-const idade = prompt("Digite sua idade:")
-const email = prompt("Digite seu email:")
+  const nome = prompt("Digite seu nome:")
+  const idade = prompt("Digite sua idade:")
+  const email = prompt("Digite seu email:")
 
-return console.log(`Meu nome é ${nome}, tenho ${idade} anos, e o meu email é ${email}.`)
+  return console.log(`Meu nome é ${nome}, tenho ${idade} anos, e o meu email é ${email}.`)
 
 }
 
 // EXERCÍCIO 05
 function imprimeTresCoresFavoritas() {
   // implemente sua lógica aqui
- const cor1 = prompt("Qual a sua primeira cor favorita?")
- const cor2 = prompt("Qual a sua segunda cor favorita?")
- const cor3 = prompt("Qual a sua terceira cor favorita?")
- const cores = [cor1, cor2, cor3]
+  const cor1 = prompt("Qual a sua primeira cor favorita?")
+  const cor2 = prompt("Qual a sua segunda cor favorita?")
+  const cor3 = prompt("Qual a sua terceira cor favorita?")
+  const cores = [cor1, cor2, cor3]
 
   return console.log(cores)
 
@@ -84,7 +84,7 @@ function retornaStringEmMaiuscula(string) {
 function calculaIngressosEspetaculo(custo, valorIngresso) {
   // implemente sua lógica aqui
 
-  const calculo = custo/valorIngresso
+  const calculo = custo / valorIngresso
 
   return calculo
 
@@ -93,8 +93,8 @@ function calculaIngressosEspetaculo(custo, valorIngresso) {
 // EXERCÍCIO 08
 function checaStringsMesmoTamanho(string1, string2) {
   // implemente sua lógica 
-  
- const tamanhoString = (string1.length)===(string2.length)
+
+  const tamanhoString = (string1.length) === (string2.length)
 
   return tamanhoString
 
@@ -114,7 +114,7 @@ function retornaPrimeiroElemento(array) {
 function retornaUltimoElemento(array) {
   // implemente sua lógica aqui
 
-  return array[array.length-1]
+  return array[array.length - 1]
 
 }
 
@@ -123,10 +123,10 @@ function trocaPrimeiroEUltimo(array) {
   // implemente sua lógica aqui
 
   const primeiroElemento = array[0]
-  const UltimoElemento = array[array.length-1]
+  const UltimoElemento = array[array.length - 1]
 
   array[0] = UltimoElemento
-  array[array.length-1] = primeiroElemento
+  array[array.length - 1] = primeiroElemento
 
   return array
 
@@ -136,19 +136,41 @@ function trocaPrimeiroEUltimo(array) {
 function checaIgualdadeDesconsiderandoCase(string1, string2) {
   // implemente sua lógica aqui
 
+  const check = (string1.toUpperCase() === string2.toUpperCase())
+
+  return check
 }
 
 // EXERCÍCIO 13
 function checaRenovacaoRG() {
   // implemente sua lógica aqui
+  const anoAtual = Number(prompt('Digite o ano'))
+  const anoNascimento = Number(prompt('Digite o seu ano de nascimento'))
+  const anoIdentidade = Number(prompt('Digite o ano da sua identidade'))
+
+  const idade = anoAtual - anoNascimento
+  const VencimentoIdentidade = anoAtual - anoIdentidade
+
+  const check1 = idade <= 20 && VencimentoIdentidade >= 5
+  const check2 = idade > 20 && idade <= 50 && VencimentoIdentidade >= 10
+  const check3 = idade > 50 && VencimentoIdentidade >= 15
+
+  const checkFim = check1 || check2 || check3
+
+  return console.log(checkFim)
 
 }
 
 // EXERCÍCIO 14
 function checaAnoBissexto(ano) {
   // implemente sua lógica aqui
-
+  const check1 = ano%400 === 0
+  const check2 = (ano%4 === 0) && (ano%100 !== 0)
   
+  const checkAno = check1 || check2
+
+  return checkAno
+
 }
 
 // EXERCÍCIO 15
@@ -156,12 +178,12 @@ function checaValidadeInscricaoLabenu() {
   // implemente sua lógica aqui
 
   const idade = prompt(`tem mais de 18?: `)
-  idadeCheck = idade.includes("sim")
+  const idadeCheck = idade.includes("sim")
   const ensinoMedio = prompt(`tem ensino médio completo?: `)
-  ensinoMedioCheck = ensinoMedio.includes("sim")
+  const ensinoMedioCheck = ensinoMedio.includes("sim")
   const horario = prompt(`tem disponibilidade de horários?: `)
-  horarioCheck = horario.includes("sim")
-
+  const horarioCheck = horario.includes("sim")
+  
   const check = (idadeCheck && ensinoMedioCheck && horarioCheck) === true
 
   return console.log(check)
