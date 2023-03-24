@@ -115,7 +115,6 @@ function retornaUltimoElemento(array) {
   // implemente sua lógica aqui
 
   return array[array.length - 1]
-
 }
 
 // EXERCÍCIO 11
@@ -129,7 +128,6 @@ function trocaPrimeiroEUltimo(array) {
   array[array.length - 1] = primeiroElemento
 
   return array
-
 }
 
 // EXERCÍCIO 12
@@ -158,7 +156,6 @@ function checaRenovacaoRG() {
   const checkFim = check1 || check2 || check3
 
   return console.log(checkFim)
-
 }
 
 // EXERCÍCIO 14
@@ -170,7 +167,6 @@ function checaAnoBissexto(ano) {
   const checkAno = check1 || check2
 
   return checkAno
-
 }
 
 // EXERCÍCIO 15
